@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Início — Simulador de Custos de Viagem{% endblock %}
+
+{% block conteudo %}
+
+<!-- Hero / Jumbotron -->
+<div class="p-5 mb-4 bg-light rounded-3">
+    <h1 class="display-5 fw-bold">💰 Simulador de Custos de Viagem</h1>
+    <p class="lead">
+        Calcular o custo de viagem nunca foi tão fácil. 
+        Nossa ferramenta ajuda você a calcular o consumo médio do veículo (em km/l) e te dá uma classificação da eficiência do mesmo.
+    </p>
+    <a href="{{ url_for('formulario') }}" class="btn btn-primary">➕ Calcular Custo de Viajem</a>
+</div>
+
+<!-- Como é feito o cálculo -->
+<h2 class="mb-3">Como é feito o cálculo</h2>
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="alert alert-primary text-center fs-4">
+            quantidade de litros necessários (LN = D / C)&divide;, o custo total da viagem (CT = LN x P)&divide; e o custo por quilômetro rodado (CQ = CT / D)
+            Valor por Pessoa = (Conta + Gorjeta) &divide; Quantidade de Pessoas
+        </div>
+    </div>
+</div>
+
+<!-- Tabela de classificação-->
+<h2 class="mb-3">Classificação da Eficiência</h2>
+<div class="table-responsive mb-4">
+    <table class="table table-bordered table-hover">
+        <thead class="table-primary">
+            <tr>
+                <th>Km</th>
+                <th>Classificação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Consumo exato de 8 km/l</td>
+                <td>Padrão</td>
+            </tr>
+            <tr>
+                <td>Consumo exato de 15 km/l</td>
+                <td>Padrão</td>
+            </tr>
+            <tr>
+                <td>Consumo exato de 18 km/l</td>
+                <td>Econômico</td>
+            </tr>
+            <tr>
+                <td>Estritamente abaixo de 8 km/l</td>
+                <td>Beberrão</td>
+            </tr>
+            <tr>
+                <td>Estritamente acima de 18 km/l</td>
+                <td>Super Econômico</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Cards informativos -->
+<div class="row g-4 mb-2">
+    <div class="col-md-4">
+        <div class="card card-informativo border-destaque-azul p-3">
+            <div class="card-body">
+                <h5 class="card-title">📊 Por que usar?</h5>
+                <p class="card-text">
+                    Ao usar a nosso sistema calculadora, você garante 
+                    que o cálculo matemático esteja correto, incluindo os centavos, permitindo um planejamento eficiente da viagem.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

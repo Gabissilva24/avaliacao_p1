@@ -1,0 +1,122 @@
+/* --- 1. Navbar (Cabeçalho Clean) --- */
+.navbar {
+    background-color: #ffffff !important; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    border-bottom: 3px solid #0d6efd;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    color: #0d6efd !important;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: none;
+}
+
+.nav-link {
+    color: #495057 !important;
+    font-weight: 600;
+    margin-left: 20px;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #0d6efd !important;
+}
+
+/* --- 2. Tipografia e Títulos (Tamanhos Reduzidos) --- */
+.display-5 { 
+    font-size: 1.8rem !important; 
+    font-weight: 700;
+}
+
+h2, .titulo-resultados { 
+    font-size: 1.4rem !important; 
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+/* --- 3. Card da Fórmula (Cores Originais Restauradas) --- */
+.alert-primary.fs-4 {
+    background-color: #cfe2ff !important; /* Azul de fundo original do seu print */
+    color: #084298 !important;            /* Azul do texto original */
+    border-color: #b6d4fe !important;     /* Borda original */
+    font-size: 1.1rem !important;         /* Tamanho menor solicitado */
+    padding: 15px !important;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+/* --- 4. Cards Informativos (Com efeito de flutuar e bordas coloridas) --- */
+.card-informativo {
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.card-informativo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-informativo .card-title {
+    color: #212529;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.card-informativo .card-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.border-destaque-azul { border-left: 5px solid #0d6efd !important; }
+.border-destaque-amarelo { border-left: 5px solid #ffc107 !important; }
+.border-destaque-verde { border-left: 5px solid #198754 !important; }
+
+/* --- 5. Classificações (Badges de Resultados) --- */
+.badge-custom {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.bg-danger.badge-custom { 
+    background-color: #ffeef0 !important; 
+    color: #dc3545 !important; 
+    border: 1px solid #dc3545 !important; 
+}
+.bg-info.badge-custom { 
+    background-color: #e7f5ff !important; 
+    color: #0d6efd !important; 
+    border: 1px solid #0d6efd !important; 
+}
+.bg-success.badge-custom { 
+    background-color: #eafaf1 !important; 
+    color: #198754 !important; 
+    border: 1px solid #198754 !important; 
+}
+
+/* --- 6. Rodapé --- */
+footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.9rem;
+}
+
+/* Efeito visual extra para cada tipo */
+.bg-danger.badge-custom { border: 1px solid #a02020; }  /* Mão de vaca */
+.bg-info.badge-custom { border: 1px solid #0aa2c0; }    /* Legal */
+.bg-success.badge-custom { border: 1px solid #157347; } /* Generoso */

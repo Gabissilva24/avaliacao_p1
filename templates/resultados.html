@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Resultados — Simulador de Custos de Viagem{% endblock %}
+
+{% block conteudo %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>📋 Resultados de Cálculos</h2>
+    <div>
+        <span class="badge bg-primary fs-6">{{ total }} registro(s)</span>
+        <a href="{{ url_for('calcular') }}" class="btn btn-primary ms-2">➕ Novo Cálculo</a>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-primary">
+            <tr>
+                <th>#</th>
+                <th>Distância (km/l)</th>
+                <th>Consumo (km/l)</th>
+                <th>Preço (R$)</th>
+                <th>Litros Necessarios</th>
+                <th>Custo Total (R$)</th>
+                <th>Custo Por km (R$)</th>
+                <th>Classificação</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in calculos %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ item.distancia_conta }}</td>
+                <td>{{ item.consumo_conta }}</td>
+                <td>{{ "%.2f" | format(item.preco_conta) }}</td>
+                <td>{{ "%.2f" | format(item.litros_necessarios) }}</td>
+                <td>{{ "%.2f" | format(item.custo_total_viagem) }}</td>
+                <td class="fw-bold">{{ "%.2f" | format(item.custo_por_km_rodado) }}</td>
+                <td>
+                    {% if item.classificacao == 'Super Econômico' %}
+                    <span class="badge bg-success">
+                        {{ item.classificacao }}
+                    </span>
+
+                    {% elif item.classificacao == 'Econômico' %}
+                    <span class="badge bg-warning text-dark">
+                        {{ item.classificacao }}
+                    </span>
+
+                    {% elif item.classificacao == 'Beberrão' %}
+                    <span class="badge bg-danger">
+                        {{ item.classificacao }}
+                    </span>
+
+                    {% else %}
+                    <span class="badge bg-secondary">
+                        {{ item.classificacao }}
+                    </span>
+
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+</div>
+
+<a href="{{ url_for('index') }}" class="btn btn-outline-primary">← Voltar ao Início</a>
+
+{% endblock %}
